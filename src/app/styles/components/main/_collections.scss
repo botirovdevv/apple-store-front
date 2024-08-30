@@ -1,0 +1,29 @@
+.collections {
+    padding-top: 50px;
+    overflow-y: scroll;
+
+    &-cards {
+        @include flex(center, space-between);
+    }
+
+    &-title {
+        font-family: $second-family;
+        font-weight: 700;
+        font-size: 43px;
+        line-height: 121%;
+        letter-spacing: 0em;
+        text-align: center;
+        color: $font-color-black;
+        padding-bottom: 30px;
+    }
+
+    &-name {
+        font-family: $second-family;
+        font-weight: 700;
+        font-size: 13px;
+        line-height: 154%;
+        letter-spacing: -0.02em;
+        text-align: center;
+        color: #000;
+    }
+}
