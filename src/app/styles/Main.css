@@ -37,10 +37,10 @@ button {
 }
 
 .container {
-  max-width: 1460px;
+  max-width: 1440px;
   width: 100%;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 30px;
 }
 
 body {
@@ -75,13 +75,14 @@ body.scroll {
 }
 
 .nav {
-  background-color: #000;
+  background-color: transparent;
   padding: 24px 0;
 }
 .nav-content {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 14px;
 }
 .nav-logo {
   display: flex;
@@ -99,11 +100,21 @@ body.scroll {
   font-size: 16px;
   color: #8b8e99;
 }
+@media screen and (max-width: 400px) {
+  .nav-logo_title {
+    display: none;
+  }
+}
 .nav-links {
   display: flex;
   align-items: center;
   justify-content: unset;
   gap: 24px;
+}
+@media screen and (max-width: 370px) {
+  .nav-links {
+    display: none;
+  }
 }
 .nav-link {
   font-family: "Poppins", sans-serif;
@@ -121,12 +132,389 @@ body.scroll {
   justify-content: center;
   gap: 7px;
 }
+@media screen and (max-width: 571px) {
+  .nav-enter_link {
+    display: none;
+  }
+}
 .nav-line {
   color: #8b8e99;
   font-size: 30px;
   font-weight: 700;
 }
+.nav-user_btn {
+  background-color: transparent;
+  border: none;
+  display: none;
+}
+@media screen and (max-width: 571px) {
+  .nav-user_btn {
+    display: block;
+  }
+}
+
+.main {
+  background: linear-gradient(152deg, #383638 2.99%, #0b0b0b 48.03%);
+  height: 100%;
+}
+@media screen and (max-width: 1120px) {
+  .main {
+    height: 100vh;
+  }
+}
 
 .banner {
+  background-color: transparent;
+}
+.banner-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@media screen and (max-width: 1120px) {
+  .banner-content {
+    justify-content: center;
+  }
+}
+.banner-texts {
+  display: flex;
+  align-items: start;
+  justify-content: unset;
+  flex-direction: column;
+  gap: 15px;
+}
+@media screen and (max-width: 1120px) {
+  .banner-texts {
+    padding-top: 50px;
+    align-items: center;
+    justify-content: center;
+  }
+}
+.banner-img {
+  width: 802px;
+  height: 638px;
+  transform: translateX(3%);
+}
+@media screen and (max-width: 1320px) {
+  .banner-img {
+    width: 702px;
+    height: 538px;
+  }
+}
+@media screen and (max-width: 1220px) {
+  .banner-img {
+    width: 602px;
+    height: 438px;
+  }
+}
+@media screen and (max-width: 1120px) {
+  .banner-img {
+    width: 502px;
+    height: 438px;
+  }
+}
+@media screen and (max-width: 1010px) {
+  .banner-img {
+    width: 402px;
+    height: 338px;
+  }
+}
+@media screen and (max-width: 907px) {
+  .banner-img {
+    display: none;
+  }
+}
+.banner-form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  box-shadow: 2px 4px 12px 0 rgba(0, 0, 0, 0.25);
+  background: #f5f5f7;
+  border-radius: 15px;
+  width: 443px;
+  height: 60px;
+  padding: 0 20px;
+}
+@media screen and (max-width: 500px) {
+  .banner-form {
+    width: 100%;
+  }
+}
+.banner-icon {
+  border: none;
+}
+.banner-input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 125%;
+  color: #8b8e99;
+  background-color: transparent;
+}
+.banner-search_btn {
+  width: 143px;
+  height: 49px;
+  background-color: #3858d6;
+  border-radius: 10px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 125%;
+  text-align: center;
+  color: #fff;
+  border: none;
+}
+.banner-title {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 57px;
+  line-height: 55px;
+  font-size: 57px;
+  color: #f5f5f7;
+  width: 457px;
+}
+@media (max-width: 1260px) {
+  .banner-title {
+    font-size: calc(32px + 25 * (100vw - 320px) / 940);
+  }
+}
+@media screen and (max-width: 1120px) {
+  .banner-title {
+    text-align: center;
+  }
+}
+@media screen and (max-width: 470px) {
+  .banner-title {
+    width: 100%;
+  }
+}
+.banner-subtitle {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 125%;
+  color: #8b8e99;
+  width: 456px;
+}
+@media (max-width: 1260px) {
+  .banner-subtitle {
+    font-size: calc(14px + 2 * (100vw - 320px) / 940);
+  }
+}
+@media screen and (max-width: 1120px) {
+  .banner-subtitle {
+    text-align: center;
+  }
+}
+@media screen and (max-width: 500px) {
+  .banner-subtitle {
+    width: 100%;
+  }
+}
+
+.collections {
+  padding-top: 50px;
+}
+.collections-cards {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow-y: scroll;
+}
+.collections-title {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 43px;
+  line-height: 121%;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #8b8e99;
+  padding-bottom: 30px;
+}
+.collections-name {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 154%;
+  letter-spacing: -0.02em;
+  text-align: center;
+  color: #000;
+}
+
+.iphones {
   background-color: #000;
+  margin-top: 70px;
+  padding-top: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.iphones-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.iphones-img {
+  width: 961px;
+  height: 393px;
+}
+@media screen and (max-width: 1000px) {
+  .iphones-img {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 700px) {
+  .iphones-img {
+    height: 330px;
+  }
+}
+@media screen and (max-width: 550px) {
+  .iphones-img {
+    height: 250px;
+  }
+}
+@media screen and (max-width: 420px) {
+  .iphones-img {
+    height: 220px;
+  }
+}
+.iphones-banner_title {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 42px;
+  line-height: 124%;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #fff;
+}
+.iphones-price {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 153%;
+  letter-spacing: 0.01em;
+  text-align: center;
+  color: #f5f5f7;
+  padding-top: 14px;
+}
+.iphones-link {
+  border-radius: 10px;
+  background-color: #3858d6;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 125%;
+  text-align: center;
+  color: #fff;
+  width: 110px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.iphones-learn_more {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 21px;
+  line-height: 138%;
+  letter-spacing: 0.01em;
+  color: #3858d6;
+}
+.iphones-links_group {
+  padding: 40px 0 100px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+
+.slider-container {
+  position: relative;
+  padding: 40px 0;
+}
+.slider-title {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 43px;
+  line-height: 121%;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #1d1d1f;
+}
+.slider-title {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 24px;
+}
+.slider-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  transition: all 0.3s ease-in-out;
+  opacity: 0.7;
+}
+.slider-card.active {
+  transform: scale(1.1);
+  opacity: 1;
+}
+.slider-buy_button {
+  background-color: #0066cc;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 138px;
+  height: 38px;
+  transition: all 0.2s ease-in-out;
+}
+.slider-buy_button:hover {
+  opacity: 0.8;
+}
+.slider-label {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 133%;
+  letter-spacing: -0.01em;
+  text-align: center;
+  color: #bf4800;
+  padding: 10px 0;
+}
+.slider-name {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 23px;
+  line-height: 87%;
+  letter-spacing: -0.01em;
+  text-align: center;
+  color: #000;
+}
+.slider-price {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 143%;
+  letter-spacing: -0.02em;
+  text-align: center;
+  color: #1d1d1f;
+  padding: 10px 0;
+}
+.slider-colors {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+.slider-color {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin: 0 5px;
+  display: inline-block;
 }/*# sourceMappingURL=Main.css.map */

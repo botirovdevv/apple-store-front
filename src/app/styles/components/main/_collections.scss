@@ -1,9 +1,10 @@
 .collections {
     padding-top: 50px;
-    overflow-y: scroll;
 
     &-cards {
         @include flex(center, space-between);
+        overflow-y: scroll;
+
     }
 
     &-title {
