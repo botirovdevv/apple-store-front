@@ -1,0 +1,50 @@
+.apple-watch-banner {
+    position: relative;
+    height: 50vh;
+    border-radius: 22px;
+    background: linear-gradient(132deg, #383638 0%, #0b0b0b 26.93%, #0b0b0b 71.92%, #383638 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin: 170px 0 20px 0;
+
+    @media screen and (max-width: 900px){
+        height: 38vh;
+    }
+}
+
+.apple-watch-title {
+    font-family: $second-family;
+    font-weight: 700;
+    @include adaptive-value('font-size', 96, 35);
+    text-align: center;
+    color: #fff;
+    position: relative;
+    z-index: 10; 
+}
+
+.apple-watch {
+    position: absolute;
+    z-index: 5;
+    transition: transform 0.8s ease;
+
+    @media screen and (max-width: 1300px) {
+        display: none;
+    }
+
+    &.left-watch {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 215px;
+        height: 243px;
+    }
+
+    &.right-watch {
+        right: 50%;
+        transform: translateX(50%);
+        width: 148px;
+        height: 276px;
+    }
+}
