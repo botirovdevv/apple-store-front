@@ -1,0 +1,106 @@
+.subscribe {
+    background-color: #F5F5F7;
+    padding: 80px 0;
+
+    &-content {
+        box-shadow: 2px 4px 12px 0 rgba(0, 0, 0, 0.25);
+        background: #fff;
+        padding: 50px 0 50px 50px;
+        border-radius: 22px;
+        width: 100%;
+        height: 435px;
+        @include flex(center, space-between);
+
+        @media screen and (max-width: 1290px){
+            justify-content: center;
+            padding: 0 50px;
+        }
+
+        @media screen and (max-width: 487px){
+            padding: 0 15px;
+        }
+
+    }
+
+    &-texts{
+        @media screen and (max-width: 710px){
+            width: 100%;
+        }
+    }
+
+    &-title {
+        font-family: $third-family;
+        font-weight: 700;
+        font-size: 36px;
+        color: #1e1d1d;
+
+        @media screen and (max-width: 1290px){
+            text-align: center;
+        }
+    }
+
+    &-subtitle {
+        font-family: $third-family;
+        font-weight: 700;
+        font-size: 16px;
+        color: $font-color-black;
+        padding: 13px 0;
+        @media screen and (max-width: 1290px){
+            text-align: center;
+        }
+    }
+
+    &-form {
+        border-radius: 15px;
+        width: 511px;
+        height: 69px;
+        box-shadow: 2px 4px 12px 0 rgba(0, 0, 0, 0.25);
+        background: $bg;
+        @include flex(center, space-between);
+        gap: 24px;
+        padding: 0 24px;
+
+        @media screen and (max-width: 710px){
+            width: 100%;
+        }
+
+        @media screen and (max-width: 360px){
+            padding: 0 5px;
+        }
+
+
+    }
+
+    &-input {
+        background-color: transparent;
+        border: none;
+        height: 100%;
+        width: 100%;
+        outline: none;
+        font-family: $second-family;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 125%;
+        color: rgba(139, 142, 153, 0.7);
+    }
+
+    &-btn {
+        border-radius: 10px;
+        background-color: #9fb5c8;
+        width: 152px;
+        height: 52px;
+        border: none;
+        font-family: $second-family;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 125%;
+        text-align: center;
+        color: #fff;
+    }
+
+    &-img{
+        @media screen and (max-width: 1290px){
+            display: none;
+        }
+    }
+}

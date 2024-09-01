@@ -1,7 +1,7 @@
 "use client"
 import { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation } from 'swiper/modules';
+import { Navigation, Autoplay } from 'swiper/modules';
 import Image from 'next/image';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -14,17 +14,21 @@ const ProductSlider = () => {
     return (
         <div className="slider">
             <div className="slider-container">
-                <h2 className="slider-title">Newest ex.iphones. Collection</h2>
+                <h2 className="slider-title">Newest Apple Store Uz Collection</h2>
                 <Swiper
                     spaceBetween={20}
                     slidesPerView={4}
                     centeredSlides={true}
                     loop={true}
+                    autoplay={{
+                        delay: 3000,
+                        disableOnInteraction: false,
+                      }}
                     navigation={{
                         nextEl: '.swiper-button-next',
                         prevEl: '.swiper-button-prev',
                     }}
-                    modules={[Navigation]}
+                    modules={[Navigation, Autoplay]}
                     onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
                     breakpoints={{
                         1200: {
@@ -60,7 +64,7 @@ const ProductSlider = () => {
                                 <p className='slider-price'>{product.price}</p>
 
 
-                                <button className="slider-buy_button">Buy</button>
+                                <button className="slider-buy_button">Add to backet</button>
                             </div>
                         </SwiperSlide>
                     ))}

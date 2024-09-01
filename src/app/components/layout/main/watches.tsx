@@ -1,10 +1,9 @@
 "use client";
 import React, { useEffect, useRef } from 'react';
 import { motion, useAnimation } from 'framer-motion';
-import { products } from '@/app/constants/slider';
 import { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation } from 'swiper/modules';
+import { Navigation, Autoplay } from 'swiper/modules';
 import Image from 'next/image';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -90,11 +89,15 @@ const Watches: React.FC = () => {
             slidesPerView={4}
             centeredSlides={true}
             loop={true}
+            autoplay={{
+              delay: 3000,
+              disableOnInteraction: false,
+            }}
             navigation={{
               nextEl: '.swiper-button-next',
               prevEl: '.swiper-button-prev',
             }}
-            modules={[Navigation]}
+            modules={[Navigation, Autoplay]}
             onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
             breakpoints={{
               1200: {
@@ -130,7 +133,7 @@ const Watches: React.FC = () => {
                   <p className='slider-price'>{product.price}</p>
 
 
-                  <button className="slider-buy_button">Buy</button>
+                  <button className="slider-buy_button">Add to backet</button>
                 </div>
               </SwiperSlide>
             ))}

@@ -42,10 +42,6 @@ body{
     background-color: #fff;
 }
 
-.wrapper{
-    position: relative;
-}
-
 ::-webkit-scrollbar{
     width: 7px;
 }
@@ -55,16 +51,6 @@ body{
 }
 
 ::-webkit-scrollbar-thumb{
-    background-color: #5d50c6;
+    background-color: #8b8e99;
     border-radius: 10px;
-}
-
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-body.scroll{
-    overflow-y: hidden;
 }
