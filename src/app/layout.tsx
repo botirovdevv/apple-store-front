@@ -1,20 +1,30 @@
-import './styles/Main.scss'
+"use client";
 
-export const metadata = {
-  title: 'Apple Store Uz',
-  description: 'E-commerce for just sale apple products',
-}
+import { usePathname } from 'next/navigation';
+import './styles/Main.scss';
+import Navbar from './components/layout/header/navbar';
+import Banner from './components/layout/header/banner';
+import Footer from './components/layout/footer/footer';
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const pathname = usePathname();
+  const isHomePage = pathname === '/';
+  const isAuthPage = pathname === '/login' || pathname === '/signup';
+
   return (
     <html lang="en">
       <body>
-        {children}
+        <div className={`layout-container ${isHomePage ? 'home-background' : 'auth-background'}`}>
+          <main className={`main ${isAuthPage ? 'auth-main' : ''}`}>
+            <Navbar />
+            {isHomePage && <Banner />}
+          </main>
+          {children}
+        </div>
+        <Footer />
       </body>
     </html>
-  )
-}
+  );
+};
+
+export default Layout;

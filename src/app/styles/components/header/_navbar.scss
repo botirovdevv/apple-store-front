@@ -1,88 +1,104 @@
 .nav {
-    background-color: transparent;
-    padding: 24px 0;
+    background: transparent;
+    padding: 20px 0;
 
-    &-content {
-        @include flex(center, space-between);
-        gap: 14px
-    }
-
-    &-logo {
-        @include flex(center, unset);
-        gap: 8px;
-    }
-
-    &-logo_img {
-        width: 35px;
-        height: 40px;
-    }
-
-    &-logo_title {
-        font-family: $second-family;
-        font-weight: 700;
-        font-size: 16px;
-        color: $font-color-black;
-
-        @media screen and (max-width: 400px){
-            display: none;
-        }
-
-    }
-
-    &-links {
-        @include flex(center, unset);
-        gap: 24px;
-
-        @media screen and (max-width: 370px){
-            display: none;
-        }
-
-    }
-
-    &-link {
-        font-family: $second-family;
-        font-weight: 700;
-        font-size: 16px;
-        color: $font-color-black;
-        transition: all 0.2s ease-in-out;
-
-        &:hover {
-            color: #b0b2b7;
-        }
-    }
-
-    &-enter_link{
-        @include flex(center, center);
-        gap: 7px;
-
-        @media screen and (max-width: 571px){
-            display: none;
-        }
+    &.auth-nav {
+        background-color: #fff;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     }
 
 
-    &-line {
-        color: $font-color-black;
-        font-size: 30px;
-        font-weight: 700;
-    }
+&-content {
+    @include flex(center, space-between);
+    gap: 14px
+}
 
-    &-user_btn{
-        background-color: transparent;
-        border: none;
+&-logo {
+    @include flex(center, unset);
+    gap: 8px;
+}
+
+&-logo_img {
+    width: 35px;
+    height: 40px;
+}
+
+&-logo_title {
+    font-family: $second-family;
+    font-weight: 700;
+    font-size: 16px;
+    color: $font-color-black;
+
+    @media screen and (max-width: 400px) {
         display: none;
+    }
 
-        @media screen and (max-width: 571px){
-            display: block;
-        }
+}
+
+&-links {
+    @include flex(center, unset);
+    gap: 24px;
+
+    @media screen and (max-width: 370px) {
+        display: none;
+    }
+
+}
+
+&-link {
+    font-family: $second-family;
+    font-weight: 500;
+    font-size: 16px;
+    color: $font-color-black;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+        color: #b0b2b7;
     }
 }
 
-.main{
-    background:  linear-gradient(152deg, #383638 2.99%, #0b0b0b 48.03%);
+&-enter_link {
+    @include flex(center, center);
+    gap: 7px;
+
+    @media screen and (max-width: 571px) {
+        display: none;
+    }
+}
+
+
+&-line {
+    color: $font-color-black;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+&-user_btn {
+    background-color: transparent;
+    border: none;
+    display: none;
+
+    @media screen and (max-width: 571px) {
+        display: block;
+    }
+}
+}
+
+.main {
+    background: linear-gradient(152deg, #383638 2.99%, #0b0b0b 48.03%);
     height: 100%;
-
-    @media screen and (max-width: 1120px){
-        height: 100vh;
+    
+    &.auth-layout {
+      padding: 0;
+      height: 100vh;
+      background: #fff; 
     }
-}
+  }
+  
+  .nav {
+    &.nav-auth {
+      background-color: #fff;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+  }
+  
