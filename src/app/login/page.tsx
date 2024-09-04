@@ -1,7 +1,7 @@
 import React from 'react';
-import img from '../../../public/images/login.png'
-import google from '../../../public/icons/google-logo.png'
-import logo from '../../../public/images/logo.svg'
+import img from '../../../public/images/login.png';
+import google from '../../../public/icons/google-logo.png';
+import logo from '../../../public/images/logo.svg';
 import Image from 'next/image';
 import { LuUser2 } from "react-icons/lu";
 import { TbLock } from "react-icons/tb";
@@ -46,7 +46,7 @@ const LoginPage: React.FC = () => {
               Continue with Google
             </button>
             <div className="login-items">
-              <h1 className="login-info_title">Don't have an account?</h1>
+              <h1 className="login-info_title">Don&apos;t have an account?</h1>
               <Link href={'#'} className='login-signup_link'>Sign up now</Link>
             </div>
           </form>
