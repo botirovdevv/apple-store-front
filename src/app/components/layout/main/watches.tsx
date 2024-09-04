@@ -1,7 +1,7 @@
 "use client";
-import React, { useEffect, useRef } from 'react';
+
+import React, { useEffect, useRef, useState } from 'react';
 import { motion, useAnimation } from 'framer-motion';
-import { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Autoplay } from 'swiper/modules';
 import Image from 'next/image';
@@ -16,28 +16,26 @@ const Watches: React.FC = () => {
   const rightWatchControls = useAnimation();
   const [activeIndex, setActiveIndex] = useState(0);
 
-
   useEffect(() => {
     const handleScroll = () => {
-      if (ref.current) {
+      const node = ref.current;
+      if (node) {
         const scrollY = window.scrollY;
-        const bannerHeight = ref.current.clientHeight;
-        const threshold = bannerHeight / 2; 
+        const bannerHeight = node.clientHeight;
+        const threshold = bannerHeight / 2;
 
         if (scrollY > threshold) {
-          leftWatchControls.start({ x: -Math.min(scrollY - threshold, 600) }); 
-          rightWatchControls.start({ x: Math.min(scrollY - threshold, 600) }); 
+          leftWatchControls.start({ x: -Math.min(scrollY - threshold, 600) });
+          rightWatchControls.start({ x: Math.min(scrollY - threshold, 600) });
         }
       }
     };
-
-    
 
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           window.addEventListener('scroll', handleScroll);
-          handleScroll(); 
+          handleScroll();
         } else {
           window.removeEventListener('scroll', handleScroll);
         }
@@ -45,13 +43,14 @@ const Watches: React.FC = () => {
       { threshold: 0.1 }
     );
 
-    if (ref.current) {
-      observer.observe(ref.current);
+    const node = ref.current;
+    if (node) {
+      observer.observe(node);
     }
 
     return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
+      if (node) {
+        observer.unobserve(node);
       }
       window.removeEventListener('scroll', handleScroll);
     };
@@ -61,9 +60,7 @@ const Watches: React.FC = () => {
     <div className="watches">
       <div className="container">
         <div className="apple-watch-banner" ref={ref}>
-          <h1 className="apple-watch-title">
-            Apple Watch
-          </h1>
+          <h1 className="apple-watch-title">Apple Watch</h1>
           <motion.img
             src="/images/applewatch2.png"
             alt="Left Apple Watch"
@@ -79,7 +76,6 @@ const Watches: React.FC = () => {
             initial={{ x: 0 }}
           />
         </div>
-
       </div>
 
       <div className="slider">
@@ -121,19 +117,28 @@ const Watches: React.FC = () => {
             {watches.map((product, index) => (
               <SwiperSlide key={product.id}>
                 <div className={`slider-card ${index === activeIndex ? 'active' : ''}`}>
-                  <Image src={product.image} quality={100} className='slider-img' alt={product.title} width={180} height={257} objectFit="cover" />
+                  <Image
+                    src={product.image}
+                    quality={100}
+                    className="slider-img"
+                    alt={product.title}
+                    width={180}
+                    height={257}
+                    style={{ objectFit: 'cover' }}
+                  />
                   <div className="slider-colors">
                     {product.colors.map((color, colorIndex) => (
-                      <span key={colorIndex} className="slider-color" style={{ backgroundColor: color.toLowerCase() }}>
-                      </span>
+                      <span
+                        key={colorIndex}
+                        className="slider-color"
+                        style={{ backgroundColor: color.toLowerCase() }}
+                      ></span>
                     ))}
                   </div>
                   {index === activeIndex && <span className="slider-label">New</span>}
-                  <h3 className='slider-name'>{product.title}</h3>
-                  <p className='slider-price'>{product.price}</p>
-
-
-                  <button className="slider-buy_button">Add to backet</button>
+                  <h3 className="slider-name">{product.title}</h3>
+                  <p className="slider-price">{product.price}</p>
+                  <button className="slider-buy_button">Add to basket</button>
                 </div>
               </SwiperSlide>
             ))}
