@@ -124,7 +124,7 @@ const Watches: React.FC = () => {
                     alt={product.title}
                     width={180}
                     height={257}
-                    style={{ objectFit: 'cover' }}
+                    // style={{ objectFit: 'cover' }}
                   />
                   <div className="slider-colors">
                     {product.colors.map((color, colorIndex) => (

@@ -1,0 +1,157 @@
+.contact {
+    padding: 50px 0;
+
+    &-card {
+        @include flex(center, unset);
+        gap: 50px;
+        border-radius: 10px;
+        box-shadow: 2px 4px 12px 0 rgba(0, 0, 0, 0.25);
+        background: #fff;
+        width: 1227px;
+        height: 100%;
+        padding: 12px;
+        margin: 0 auto;
+
+        @media screen and (max-width: 1278px) {
+            width: 100%;
+        }
+
+        @media screen and (max-width: 757px) {
+            padding: 35px 15px;
+        }
+
+    }
+
+    &-information {
+        border-radius: 10px;
+        background-color: #000;
+        width: 591px;
+        height: 100%;
+        padding: 50px 30px;
+
+        @media screen and (max-width: 757px) {
+            display: none;
+        }
+    }
+
+    &-title {
+        font-family: $second-family;
+        font-weight: 600;
+        font-size: 28px;
+        color: #fff;
+    }
+
+    &-subtitle {
+        font-family: $second-family;
+        font-weight: 400;
+        font-size: 18px;
+        color: #c9c9c9;
+    }
+
+    &-link {
+        @include flex(center, unset);
+        gap: 14px;
+        font-family: $second-family;
+        font-weight: 400;
+        font-size: 16px;
+        color: #fff;
+    }
+
+    &-information_links {
+        padding-top: 130px;
+        @include flex(start, unset);
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    &-social_links {
+        @include flex(center, unset);
+        gap: 15px;
+        padding-top: 130px;
+    }
+
+    &-label {
+        font-family: $third-family;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 143%;
+        color: $font-color-black;
+    }
+
+    &-input {
+        border: 1px solid $border-color;
+        border-radius: 8px;
+        padding: 10px 14px;
+        width: 300px;
+        height: 44px;
+        box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
+        background: #fff;
+        outline: none;
+        font-family: $third-family;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 150%;
+        color: $font-color-black;
+
+        @media screen and (max-width: 1082px) {
+            width: 100%;
+        }
+    }
+
+    &-items {
+        @include flex(start, unset);
+        flex-direction: column;
+        gap: 10px;
+
+        @media screen and (max-width: 1082px) {
+            width: 100%;
+        }
+    }
+
+    &-inputs {
+        @include flex(start, space-between);
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    &-message {
+        @include flex(start, unset);
+        flex-direction: column;
+        padding-top: 50px;
+        gap: 10px;
+    }
+
+    &-message_input {
+        border: 1px solid $border-color;
+        border-radius: 8px;
+        padding: 10px 14px;
+        width: 100%;
+        height: 44px;
+        outline: none;
+    }
+
+    &-btn {
+        font-family: $second-family;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 125%;
+        text-align: center;
+        color: #fff;
+        border-radius: 10px;
+        background-color: $blue-bg;
+        width: 249px;
+        height: 52px;
+        border: none;
+        transition: all 0.2s ease-in-out;
+        margin-top: 30px;
+
+        &:hover {
+            opacity: 0.8;
+        }
+
+        @media screen and (max-width: 420px){
+            width: 100%;
+        } 
+
+    }
+}
