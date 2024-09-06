@@ -50,7 +50,7 @@ const Contact = () => {
                                 </div>
 
                                 <div className="contact-items">
-                                    <label className="contact-label">Secondx Name</label>
+                                    <label className="contact-label">Second Name</label>
                                     <input type="text" className="contact-input" placeholder="Mustafo" />
                                 </div>
 

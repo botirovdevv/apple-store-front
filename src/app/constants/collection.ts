@@ -23,7 +23,7 @@ export const collectionsData: collectionType[] = [
     {
         id: 4,
         image: '/images/img4.png',
-        title: "Apple Watch"
+        title: "AppleWatch"
     },
     {
         id: 5,
