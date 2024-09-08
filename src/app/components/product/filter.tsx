@@ -13,14 +13,15 @@ const Filter: React.FC<{ products: any[], setFilteredProducts: (products: any[])
 
   return (
     <div className="filter">
-      <label>Price Range:</label>
+      <label className='filter-label'>Price Range:</label>
       <input
         type="number"
         value={priceRange || ''}
         onChange={(e) => setPriceRange(Number(e.target.value))}
         placeholder="Enter max price"
+        className='filter-input'
       />
-      <button onClick={handleFilter}>Apply Filter</button>
+      <button onClick={handleFilter} className='filter-btn'>Apply Filter</button>
     </div>
   );
 };

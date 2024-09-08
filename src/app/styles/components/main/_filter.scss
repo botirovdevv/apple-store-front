@@ -1,0 +1,32 @@
+.filter {
+    @include flex(start, unset);
+    flex-direction: column;
+    gap: 12px;
+
+    &-label {
+        font-family: $font-family;
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+    &-input {
+        border: 1px solid $border-color;
+        border-radius: 8px;
+        padding: 10px 14px;
+        width: 226px;
+        height: 44px;
+        box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
+        background: #fff;
+    }
+
+    &-btn{
+        font-family: $font-family;
+        width: 130px;
+        height: 40px;
+        border-radius: 8px;
+        background-color: $blue-bg;
+        border: none;
+        color: #fff;
+        font-size: 14px;
+    }
+}

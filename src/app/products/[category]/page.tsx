@@ -3,29 +3,18 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'next/navigation';
 import Search from '../../components/product/search';
 import Filter from '../../components/product/filter';
-import { useAuth } from '@/app/contexts/AuthContext';
-
-type Product = {
-    id: number;
-    name: string;
-    price: number;
-    category: string;
-};
-
-const allProducts: Product[] = [
-    { id: 1, name: 'iPhone 12', price: 999, category: 'iphone' },
-    { id: 2, name: 'MacBook Pro', price: 1299, category: 'mac' },
-    { id: 3, name: 'AirPods Pro', price: 199, category: 'accessories' },
-    { id: 4, name: 'iPad', price: 799, category: 'ipad' },
-    { id: 5, name: 'MacBook air m1', price: 1199, category: 'mac' },
-    { id: 6, name: 'Apple Watch', price: 299, category: 'applewatch' },
-];
+import Image from 'next/image';
+import Link from 'next/link';
+import { FaFilter } from "react-icons/fa";
+import { IoClose } from "react-icons/io5";
+import { allProducts, Product } from '@/app/constants/product';
 
 const ProductsPage: React.FC = () => {
     const { category } = useParams();
     const [products, setProducts] = useState<Product[]>([]);
     const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
     const [searchTerm, setSearchTerm] = useState('');
+    const [isOpen, setIsOpen] = useState(false)
 
     useEffect(() => {
         if (category) {
@@ -47,7 +36,15 @@ const ProductsPage: React.FC = () => {
         }
     };
 
-    const { isAuthenticated, logout, login } = useAuth();
+    const renderRating = (rating: number) => {
+        const fullStars = '★'.repeat(rating);
+        const emptyStars = '☆'.repeat(5 - rating);
+        return (
+            <span style={{ color: 'gold' }}>
+                {fullStars}{emptyStars}
+            </span>
+        );
+    };
 
 
     if (!category) {
@@ -55,31 +52,61 @@ const ProductsPage: React.FC = () => {
     }
 
     return (
-        <div className="products-page">
-            <Search onSearch={handleSearch} />
-            <Filter products={products} setFilteredProducts={setFilteredProducts} />
-            <div className="products-list">
-                {filteredProducts.length ? (
-                    filteredProducts.map(product => (
-                        <div key={product.id} className="product-card">
-                            <h3>{product.name}</h3>
-                            <p>{product.price} $</p>
+        <div className="products">
+            <div className={isOpen ? "products-bg show" : "products-bg"} onClick={() => setIsOpen(false)}></div>
+            <div className="container">
+                <div className="products-content">
+                    <div className={isOpen ? "products-filter show" : "products-filter"}>
+                        <button className='products-close_btn' onClick={() => setIsOpen(false)}>
+                            <IoClose fontSize={25} />
+                        </button>
+                        <ul className="products-categories">
+                            <Link className='products-link' href={'/products/mac'}>iMac</Link>
+                            <Link className='products-link' href={'/products/mac'}>Macbook</Link>
+                            <Link className='products-link' href={'/products/airpods'}>AirPods</Link>
+                            <Link className='products-link' href={'/products/apple-watch'}>Apple Watch</Link>
+                        </ul>
+                        <Filter products={products} setFilteredProducts={setFilteredProducts} />
+                    </div>
+                    <div className="products-cards">
+                        <div className="products-items">
+                            <button className="products-filter_btn" onClick={() => setIsOpen(true)}>
+                                <FaFilter color="#8b8e99" fontSize={21}/>
+                            </button>
+                            <Search onSearch={handleSearch} />
                         </div>
-                    ))
-                ) : (
-                    <p>No products found in this category.</p>
-                )}
-            </div>
-            <>
+                        <div className="products-list">
+                            {filteredProducts.length ? (
+                                filteredProducts.map(product => (
+                                    <div key={product.id} className="products-card">
+                                        <div className="products-image">
+                                            <Image src={product.img} alt={product.name} width={120} height={161} />
+                                        </div>
+                                        <p>{renderRating(product.rating)}</p>
+                                        <h3 className='products-name'>{product.name}</h3>
+                                        <div className="products-product_price">
+                                            <h2 className="products-old_price">{product.oldprice} $</h2>
+                                            <p className='products-price'>{product.price} $</p>
+                                        </div>
+                                    </div>
+                                ))
+                            ) : (
+                                <p>No products found in this category.</p>
+                            )}
+                        </div>
+                    </div>
+                    {/* <>
 
-                {
-                    isAuthenticated ? (
-                        <button onClick={logout}>Logout</button>
-                    ) : (
-                        <button onClick={login}>Login</button>
-                    )
-                }
-            </>
+                        {
+                            isAuthenticated ? (
+                                <button onClick={logout}>Logout</button>
+                            ) : (
+                                <button onClick={login}>Login</button>
+                            )
+                        }
+                    </> */}
+                </div>
+            </div>
         </div>
     );
 };

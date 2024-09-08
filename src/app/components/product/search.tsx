@@ -15,6 +15,7 @@ const Search: React.FC<{ onSearch: (term: string) => void }> = ({ onSearch }) =>
         value={searchTerm}
         onChange={handleSearch}
         placeholder="Search products..."
+        className='search-input'
       />
     </div>
   );

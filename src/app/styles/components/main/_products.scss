@@ -1,0 +1,152 @@
+.products {
+    background: $bg;
+    padding: 30px 0;
+
+    &-content {
+        @include flex(start, unset);
+        gap: 24px;
+    }
+
+    &-list {
+        @include flex(start, unset);
+        flex-wrap: wrap;
+        padding-top: 35px;
+        gap: 14px;
+    }
+
+    &-card {
+        border: 1px solid $border-color;
+        border-radius: 10px;
+        padding: 16px;
+        width: 234px;
+        height: 100%;
+        background: #fff;
+    }
+
+    &-name {
+        font-family: $font-family;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 143%;
+        color: $default-text-color;
+    }
+
+    &-price {
+        font-family: $font-family;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 143%;
+        color: $blue-bg;
+    }
+
+    &-old_price {
+        font-family: $font-family;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 143%;
+        text-decoration: line-through;
+        color: $font-color-black;
+    }
+
+    &-product_price {
+        @include flex(center, unset);
+        gap: 5px;
+    }
+
+    &-image {
+        @include flex(center, center);
+        width: 100%;
+        padding-bottom: 30px;
+    }
+
+    &-categories {
+        @include flex(start, unset);
+        flex-direction: column;
+        gap: 10px;
+        padding-bottom: 20px;
+    }
+
+    &-link {
+        font-family: $second-family;
+        font-weight: 500;
+        font-size: 14px;
+        color: $font-color-black;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+            color: $blue-bg;
+        }
+    }
+
+    &-filter {
+        @media screen and (max-width: 540px) {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 400px;
+            height: 100vh;
+            transform: translateX(-100%);
+            background-color: #fff;
+            transition: all 0.2s ease-in-out;
+            z-index: 9999999999;
+            padding: 50px 25px;
+        }
+
+        @media screen and (max-width: 410px){
+            width: 100%;
+        }
+
+
+        &.show {
+            transform: translateY(0);
+        }
+    }
+
+    &-bg {
+        @media screen and (max-width: 540px) {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: #0000006b;
+            z-index: 999999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.2s ease-in-out;
+        }
+
+
+        &.show {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    &-items {
+        width: 100%;
+        @include flex(center, unset);
+        gap: 10px;
+    }
+
+    &-filter_btn {
+        border: none;
+        display: none;
+
+        @media screen and (max-width: 540px){
+            display: block;
+        }
+    }
+
+    &-close_btn {
+        border: none;
+        display: none;
+
+        @media screen and (max-width: 540px){
+            display: block;
+            position: fixed;
+            right: 30px;
+            top: 30px;
+        }
+    }
+}
