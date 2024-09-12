@@ -54,3 +54,9 @@ body{
     background-color: #8b8e99;
     border-radius: 10px;
 }
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}

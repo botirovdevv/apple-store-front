@@ -12,7 +12,7 @@ const Collections = () => {
           <div className="collections-cards">
             {collectionsData.map((c) => (
               <Link
-                href={`/products/${c.title?.toLowerCase()}`}
+                href={`/${c.title?.toLowerCase()}`} // Yangi URL'lar
                 className="collections-card"
                 key={c.id}
               >

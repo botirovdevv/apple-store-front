@@ -21,29 +21,34 @@ const Navbar: React.FC = () => {
           <div className="nav-enter_items">
             {
               isAuthenticated ? (
-                <ul className="nav-links">
-                  <Link href={'/'} className="nav-link">Home</Link>
-                  <Link href={'/'} className="nav-link">Products</Link>
-                  <Link href={'/'} className="nav-link">Orginal Products</Link>
-                  <Link href={'/'} className="nav-link">BU Products</Link>
-                  <button onClick={logout} className="nav-link">Logout</button>
-                </ul>
+                <>
+                  <ul className="nav-links">
+                    <Link href={'/'} className="nav-link">Home</Link>
+                    <Link href={'/'} className="nav-link">Products</Link>
+                    <Link href={'/'} className="nav-link">Orginal Products</Link>
+                    <Link href={'/'} className="nav-link">BU Products</Link>
+                    <button onClick={logout} className="nav-link">Logout</button>
+                  </ul>
+
+
+                </>
               ) : (
-                <ul className="nav-links">
-                  <li>
-                    <Link href="/" className="nav-link">Home</Link>
-                  </li>
-                  <li>
-                    <Link href="/about" className="nav-link">About</Link>
-                  </li>
-                  <li>
-                    <Link href="/contact" className="nav-link">Contact</Link>
-                  </li>
-                </ul>
+                <>
+                  <ul className="nav-links">
+                    <li>
+                      <Link href="/" className="nav-link">Home</Link>
+                    </li>
+                    <li>
+                      <Link href="/about" className="nav-link">About</Link>
+                    </li>
+                    <li>
+                      <Link href="/contact" className="nav-link">Contact</Link>
+                    </li>
+                  </ul>
+                </>
               )
             }
           </div>
-
           <div className="nav-enter_items">
             <Link href="/login" className="nav-user_btn">
               <FaUserAlt color="#8b8e99" fontSize={23} />

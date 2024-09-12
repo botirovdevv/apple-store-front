@@ -1,8 +1,8 @@
-"use client"
+"use client";
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'next/navigation';
-import Search from '../../components/product/search';
-import Filter from '../../components/product/filter';
+import Search from '../components/product/search';
+import Filter from '../components/product/filter';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaFilter } from "react-icons/fa";
@@ -14,11 +14,13 @@ const ProductsPage: React.FC = () => {
     const [products, setProducts] = useState<Product[]>([]);
     const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
     const [searchTerm, setSearchTerm] = useState('');
-    const [isOpen, setIsOpen] = useState(false)
+    const [isOpen, setIsOpen] = useState(false);
 
     useEffect(() => {
-        if (category) {
-            const filtered = allProducts.filter(product => product.category === category);
+        if (typeof category === 'string') {
+            const filtered = allProducts.filter(product =>
+                product.category.toLowerCase() === category.toLowerCase()
+            );
             setProducts(filtered);
             setFilteredProducts(filtered);
         }
@@ -40,12 +42,11 @@ const ProductsPage: React.FC = () => {
         const fullStars = '★'.repeat(rating);
         const emptyStars = '☆'.repeat(5 - rating);
         return (
-            <span style={{ color: 'gold' }}>
+            <span style={{ color: '#fa8232' }}>
                 {fullStars}{emptyStars}
             </span>
         );
     };
-
 
     if (!category) {
         return <p>Loading...</p>;
@@ -62,7 +63,7 @@ const ProductsPage: React.FC = () => {
                         </button>
                         <ul className="products-categories">
                             <Link className='products-link' href={'/products/mac'}>iMac</Link>
-                            <Link className='products-link' href={'/products/mac'}>Macbook</Link>
+                            <Link className='products-link' href={'/products/macbook'}>Macbook</Link>
                             <Link className='products-link' href={'/products/airpods'}>AirPods</Link>
                             <Link className='products-link' href={'/products/apple-watch'}>Apple Watch</Link>
                         </ul>
@@ -71,40 +72,32 @@ const ProductsPage: React.FC = () => {
                     <div className="products-cards">
                         <div className="products-items">
                             <button className="products-filter_btn" onClick={() => setIsOpen(true)}>
-                                <FaFilter color="#8b8e99" fontSize={21}/>
+                                <FaFilter color="#8b8e99" fontSize={21} />
                             </button>
                             <Search onSearch={handleSearch} />
                         </div>
                         <div className="products-list">
                             {filteredProducts.length ? (
                                 filteredProducts.map(product => (
-                                    <div key={product.id} className="products-card">
+                                    <Link href={`/product/${product.id}`} key={product.id} className="products-card">
                                         <div className="products-image">
-                                            <Image src={product.img} alt={product.name} width={120} height={161} />
+                                            <Image src={product.img} alt={product.name} className='products-img' width={120} height={161} />
                                         </div>
-                                        <p>{renderRating(product.rating)}</p>
-                                        <h3 className='products-name'>{product.name}</h3>
-                                        <div className="products-product_price">
-                                            <h2 className="products-old_price">{product.oldprice} $</h2>
-                                            <p className='products-price'>{product.price} $</p>
+                                        <div className="products-info">
+                                            <p>{renderRating(product.rating)}</p>
+                                            <h3 className='products-name'>{product.name}</h3>
+                                            <div className="products-product_price">
+                                                {product.oldprice && <h2 className="products-old_price">{product.oldprice} $</h2>}
+                                                <p className='products-price'>{product.price} $</p>
+                                            </div>
                                         </div>
-                                    </div>
+                                    </Link>
                                 ))
                             ) : (
                                 <p>No products found in this category.</p>
                             )}
                         </div>
                     </div>
-                    {/* <>
-
-                        {
-                            isAuthenticated ? (
-                                <button onClick={logout}>Logout</button>
-                            ) : (
-                                <button onClick={login}>Login</button>
-                            )
-                        }
-                    </> */}
                 </div>
             </div>
         </div>

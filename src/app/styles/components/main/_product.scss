@@ -1,0 +1,184 @@
+.product {
+  padding: 50px 0;
+
+  &-content {
+    @include flex(center, space-between);
+    gap: 35px;
+
+    @media screen and (max-width: 1180px){
+      flex-direction: column;
+    }
+  }
+
+  &-image{
+    width: 500px;
+  }
+
+  &-img {
+    border: 1px solid $border-color;
+    border-radius: 4px;
+    width: 100%;
+    height: 464px;
+    object-fit: contain;
+  }
+
+  &-rate {
+    font-size: 18px;
+  }
+
+  &-name {
+    font-family: $font-family;
+    font-weight: 400;
+    @include adaptive-value('font-size', 30, 25);
+    line-height: 140%;
+    color: $default-text-color;
+  }
+
+  &-price_items {
+    @include flex(center, unset);
+    gap: 8px;
+  }
+
+  &-price {
+    font-family: $font-family;
+    font-weight: 600;
+    @include adaptive-value('font-size', 22, 20);
+    line-height: 133%;
+    color: $blue-bg;
+  }
+
+  &-old_price {
+    font-family: $font-family;
+    font-weight: 400;
+    font-size: 20px;
+    @include adaptive-value('font-size', 20, 18);
+    line-height: 133%;
+    text-decoration: line-through;
+    color: $font-color-black;
+  }
+
+  &-desc {
+    font-family: $font-family;
+    font-weight: 400;
+    @include adaptive-value('font-size', 20, 18);
+    line-height: 140%;
+    color: #9e9fa1;
+    width: 650px;
+    @media screen and (max-width: 1180px){
+      text-align: center;
+    }
+
+    @media screen and (max-width: 750px){
+      width: 100%;
+    }
+
+
+  }
+
+  &-info {
+    @include flex(start, unset);
+    flex-direction: column;
+    gap: 8px;
+    @media screen and (max-width: 1180px){
+      align-items: center;
+    }
+
+  }
+
+  &-selections {
+    width: 100%
+  }
+
+  &-buttons {
+    @include flex(center, unset);
+    gap: 18px;
+    padding-top: 40px;
+    @media screen and (max-width: 1180px){
+      justify-content: center;
+    }
+
+  }
+
+  &-counter {
+    width: 152px;
+    height: 52px;
+    border-radius: 9px;
+    border: 1px solid $font-color-black;
+    @include flex(center, space-between);
+    padding: 0 14px;
+    
+  }
+
+  &-counter_btn {
+    border: none;
+    font-size: 28px;
+  }
+
+  &-number {
+    font-family: $second-family;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 125%;
+    text-align: center;
+    color: $default-text-color;
+  }
+
+  &-add_btn {
+    font-family: $second-family;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 125%;
+    text-align: center;
+    color: $blue-bg;
+    border-radius: 10px;
+    border: 1px solid $blue-bg;
+    transition: 0.2s all ease-in-out;
+    width: 222px;
+    height: 52px;
+    @include flex(center, center);
+
+    &:hover {
+      color: #fff;
+      background-color: $blue-bg;
+    }
+
+    @media screen and (max-width: 440px){
+      width: 100%;
+    }
+  }
+
+  &-buy{
+    padding-top: 20px;
+    @include flex(center, unset);
+    gap: 18px;
+    @media screen and (max-width: 1180px){
+      justify-content: center;
+    }
+  }
+
+  &-buy_btn {
+    border-radius: 10px;
+    background: $blue-bg;
+    width: 325px;
+    height: 52px;
+    font-family: $second-family;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 125%;
+    text-align: center;
+    color: #fff;
+    border: none;
+
+    @media screen and (max-width: 440px){
+      width: 100%;
+    }
+  }
+
+  &-heart_btn{
+    width: 52px;
+    height: 53px;
+    border: 1px solid $font-color-black;
+    border-radius: 10px;
+  }
+}
+
