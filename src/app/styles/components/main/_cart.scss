@@ -1,0 +1,213 @@
+.cart {
+    padding: 50px 0;
+
+    &-content {
+        @include flex(start, space-between);
+        gap: 50px;
+
+        @media screen and (max-width: 1194px) {
+            gap: 20px
+        }
+
+        @media screen and (max-width: 1120px) {
+            flex-direction: column-reverse;
+        }
+    }
+
+    &-cards {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+    }
+
+    &-card {
+        border: 1px solid $border-color;
+        width: 100%;
+        height: 100%;
+        background: #fff;
+        padding: 35px 40px;
+
+        @media screen and (max-width: 768px){
+            padding: 34px 20px;
+        }
+
+        @media screen and (max-width: 320px){
+            padding: 30px 10px;
+        }
+
+
+    }
+
+    &-title {
+        font-family: $font-family;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 133%;
+        color: $default-text-color;
+        padding-bottom: 20px
+    }
+
+    &-product_name{
+        display: none;
+        font-family: $font-family;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 143%;
+        color: $default-text-color;
+
+        @media screen and (max-width: 550px){
+            display: block;
+        }
+    }
+
+    &-product_card {
+        @include flex(center, space-between);
+
+        @media screen and (max-width: 768px){
+            gap: 6px;
+        }
+
+    }
+
+    &-counter{
+        width: 135px;
+        height: 40px;
+
+        @media screen and (max-width: 400px){
+            flex-direction: column-reverse;
+            height: 100%;
+            width: 43px;
+        }
+    }
+
+    &-subtitle {
+        font-family: $font-family;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 143%;
+        color: $default-text-color;
+
+        @media screen and (max-width: 550px){
+            display: none;
+        }
+    }
+
+    &-old_price {
+        font-family: $font-family;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 143%;
+        text-decoration: line-through;
+        color: $font-color-black;
+
+        @media screen and (max-width: 800px){
+            display: none;
+        }
+    }
+
+    &-price {
+        font-family: $font-family;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 143%;
+        color: $default-text-color;
+
+        @media screen and (max-width: 370px){
+            display: none;
+        }
+
+        }
+    
+
+    &-img {
+        object-fit: contain;
+    }
+
+    &-delete_btn {
+        border: none;
+    }
+
+    &-total_card {
+        border: 1px solid $border-color;
+        border-radius: 4px;
+        width: 500px;
+        height: 100%;
+        background: #fff;
+        padding: 25px 20px 50px 20px;
+
+        @media screen and (max-width: 1164px) {
+            width: 400px
+        }
+
+        @media screen and (max-width: 1120px) {
+            width: 100%;
+        }
+
+    }
+
+&-total_title {
+    font-family: $font-family;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 133%;
+    color: $default-text-color;
+    padding-bottom: 20px;
+}
+
+&-info_numbers {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding-bottom: 24px
+}
+
+&-info_number {
+    @include flex(center, space-between);
+}
+
+&-items {
+    @include flex(center, space-between);
+    padding-top: 24px
+}
+
+&-info_title {
+    font-family: $font-family;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 143%;
+    color: #5f6c72;
+}
+
+&-total_price {
+    font-family: $font-family;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 143%;
+    color: $default-text-color;
+}
+
+&-total {
+    font-family: $font-family;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: $default-text-color;
+}
+
+&-checkout_btn {
+    font-family: $second-family;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 125%;
+    text-align: center;
+    color: #fff;
+    width: 100%;
+    height: 52px;
+    border-radius: 10px;
+    background: $blue-bg;
+    margin-top: 20px;
+    border: none;
+}
+
+}
