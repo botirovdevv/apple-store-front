@@ -2,10 +2,11 @@ import React from "react";
 import Image from "next/image";
 import logo from "../../../../../public/images/logo.svg";
 import Link from "next/link";
-import { FaUserAlt, FaHeart } from "react-icons/fa"; 
+import { FaUserAlt, FaHeart } from "react-icons/fa";
 import { FaCartShopping } from "react-icons/fa6";
 import { usePathname } from "next/navigation";
 import { useAuth } from "@/app/contexts/AuthContext";
+import { FaUserLarge } from "react-icons/fa6";
 
 const Navbar: React.FC = () => {
   const pathname = usePathname();
@@ -55,7 +56,9 @@ const Navbar: React.FC = () => {
                 <Link href="/favorites" className="nav-link">
                   <FaHeart color="#8b8e99" fontSize={23} />
                 </Link>
-                <button onClick={logout} className="nav-link">Logout</button>
+                <Link href="/account">
+                  <FaUserLarge color="#8b8e99" fontSize={23}/>
+                </Link>
               </div>
             ) : (
               <div className="nav-login-signup">

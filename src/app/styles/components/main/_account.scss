@@ -1,0 +1,25 @@
+.account {
+    padding: 50px 0;
+
+    &-content {
+        @include flex(start, unset);
+        gap: 30px;
+    }
+
+    &-card {
+        border: 1px solid $border-color;
+        border-radius: 4px;
+        width: 100%;
+        height: 508px;
+        background: #fff;
+    }
+
+    &-title {
+        font-family: $font-family;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 143%;
+        color: $default-text-color;
+        padding: 30px
+    }
+}
