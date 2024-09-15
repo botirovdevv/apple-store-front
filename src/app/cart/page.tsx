@@ -58,7 +58,7 @@ const Cart = () => {
             <h1 className="cart-title">Shopping Card</h1>
             <div className="cart-cards">
               {products.map((product) => (
-                <div className="cart-product_card">
+                <div className="cart-product_card" key={product.id}>
                   <button className="cart-delete_btn" onClick={() => removeProduct(product.id)}>
                     <IoMdCloseCircleOutline color="#8b8e99" fontSize={24} />
                   </button>

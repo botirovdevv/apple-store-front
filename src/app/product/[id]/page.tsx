@@ -13,7 +13,7 @@ const ProductPage: React.FC = () => {
   const [selectedRam, setSelectedRam] = useState<string>('8GB');
   const [selectedSsd, setSelectedSsd] = useState<string>('256GB');
   const [selectedSize, setSelectedSize] = useState<string>('14-inch Liquid Retina XDR Display');
-  const [quantity, setQuantity] = useState<number>(1); // State for product quantity
+  const [quantity, setQuantity] = useState<number>(1);
 
   if (!allProduct) {
     return <p>Product not found.</p>;
